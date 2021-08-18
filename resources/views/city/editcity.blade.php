@@ -27,6 +27,7 @@
           <div class="col-12">
                 <form action="{{ route('update-city', [ 'id' => $city->id ]) }}" method="POST">
                     @csrf
+					@method('PUT')
                     <div class="mb-3">
                         <label for="cityId" class="form-label">City</label>
                         <input type="text" name="city_name" value="{{ old('city_name', $city->city_name) }}" class="form-control" id="cityId" aria-describedby="emailHelp">

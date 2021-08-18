@@ -23,4 +23,10 @@ Route::post('/store-city', 'CityController@store')->name('store-city');
 
 Route::get('/edit-city/{id}', 'CityController@edit')->name('edit-city');
 
-Route::post('/updat-city/{id}', 'CityController@update')->name('update-city');
+Route::put('/updat-city/{id}', 'CityController@update')->name('update-city');
+
+Route::delete('/delete-city/{id}', 'CityController@delete')->name('delete-city');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

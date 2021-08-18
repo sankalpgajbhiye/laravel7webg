@@ -41,11 +41,20 @@
                 <td>{{ $city->country_name }}</td>
                 <td>{{ $city->created_at }}</td>
                 <td>
-                    <a href="{{ route('edit-city', ['id' => $city->id ]) }}">
-                        <button class="btn btn-warning btn-sm">Edit</button>
-                    </a>
+                    <form
+                        onsubmit="return confirm('Are you sure to delete ?');"
+                        action="{{ route('delete-city', $city->id) }}"
+                        method="POST"
+                    >
+                        @csrf
+                        @method('DELETE')
 
-                    <button class="btn btn-danger btn-sm">Delete</button>
+                        <a href="{{ route('edit-city', $city->id) }}">
+                            <button type="button" class="btn btn-warning btn-sm">Edit</button>
+                        </a>
+
+                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                    </form>
                 </td>
             </tr>
             @endforeach
