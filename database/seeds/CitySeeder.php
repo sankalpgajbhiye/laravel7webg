@@ -16,11 +16,15 @@ class CitySeeder extends Seeder
                 'city_name'      => 'Akola',
                 'state_name'     => 'maharashtra',
                 'country_name'   => 'india',
+                'created_at'     => date("Y-m-d H:i:s"),
+                'updated_at'     => date("Y-m-d H:i:s")
             ],
             [
                 'city_name'      => 'Amrawati',
                 'state_name'     => 'maharashtra',
                 'country_name'   => 'india',
+                'created_at'     => date("Y-m-d H:i:s"),
+                'updated_at'     => date("Y-m-d H:i:s")
             ],
         ]);
     }

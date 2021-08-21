@@ -7,9 +7,17 @@ use App\City;
 
 class CityController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         $allCities = City::get();
+
+        // return response()->json($allCities);
         // dd($allCities);
         return view('city.index', compact('allCities'));
     }

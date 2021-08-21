@@ -14,7 +14,8 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    {{ __('You are logged in !') }}
+                    <a href="{{ route('cities') }}">Cities</a>
                 </div>
             </div>
         </div>

@@ -74,3 +74,6 @@ npm install
 
 ## node run
 npm run dev
+
+
+https://www.codermen.com/how-to-make-multi-auth-in-laravel-7/
