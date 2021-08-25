@@ -8,12 +8,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', function () {
-    // $allCities = DB::table('cities')->get();
-    $allCities = City::get();
-    // dump($allCities);
-    return view('welcomenew', compact('allCities'));
-});
+// Route::get('/home', function () {
+//     // $allCities = DB::table('cities')->get();
+//     $allCities = City::get();
+//     // dump($allCities);
+//     return view('welcomenew', compact('allCities'));
+// });
 
 Route::get('/city', 'CityController@index')->name('cities');
 

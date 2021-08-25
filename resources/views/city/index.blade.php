@@ -1,4 +1,4 @@
-@extends('layouts.dash')
+@extends('layouts.admintemplate')
 <!-- @dump($allCities) -->
 @section('title') List @endsection
 
