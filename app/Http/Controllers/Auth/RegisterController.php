@@ -52,9 +52,7 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'first_name' => ['required', 'string', 'max:255'],
             'last_name' => ['required', 'string', 'max:255'],
-            'city' => ['required', 'string', 'max:255'],
             'mobile' => ['required', 'string', 'max:255'],
-            'user_type' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
@@ -68,14 +66,18 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'first_name'    => $data['first_name'],
-            'last_name'     => $data['last_name'],
-            'city'          => $data['city'],
-            'mobile'        => $data['mobile'],
-            'user_type'     => $data['user_type'],
-            'email'         => $data['email'],
-            'password'      => Hash::make($data['password'])
-        ]);
+        $data['role_id'] = 3;
+        $data['password'] = Hash::make($data['password']);
+
+        return User::create($data);
+        // return User::create([
+        //     'first_name'    => $data['first_name'],
+        //     'last_name'     => $data['last_name'],
+        //     'city'          => $data['city'],
+        //     'mobile'        => $data['mobile'],
+        //     'user_type'     => $data['user_type'],
+        //     'email'         => $data['email'],
+        //     'password'      => Hash::make($data['password'])
+        // ]);
     }
 }

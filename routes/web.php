@@ -15,7 +15,7 @@ Route::get('/', function () {
 //     return view('welcomenew', compact('allCities'));
 // });
 
-Route::get('/city', 'CityController@index')->name('cities');
+Route::get('/city', 'CityController@index')->middleware('auth')->name('cities');
 
 Route::get('/add-city', 'CityController@add')->name('add-city');
 
