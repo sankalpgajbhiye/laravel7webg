@@ -15,7 +15,7 @@ Route::get('/', function () {
 //     return view('welcomenew', compact('allCities'));
 // });
 
-Route::get('/city', 'CityController@index')->middleware('auth')->name('cities');
+Route::get('/city', 'CityController@index')->name('cities');
 
 Route::get('/add-city', 'CityController@add')->name('add-city');
 
@@ -30,3 +30,7 @@ Route::delete('/delete-city/{id}', 'CityController@delete')->name('delete-city')
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+// routes for users crud (Only for Admin)
+
+Route::get('/user', 'UserController@index')->name('user');
