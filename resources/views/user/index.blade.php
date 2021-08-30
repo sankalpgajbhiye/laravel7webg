@@ -11,6 +11,9 @@
                 <div class="card">
                     <div class="card-header">
                         <h3 class="card-title">Users List</h3>
+                        <a href="{{ route('add-user') }}">
+                            <button class="btn btn-success btn-sm ml-2">Add</button>
+                        </a>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">

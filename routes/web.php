@@ -34,3 +34,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 // routes for users crud (Only for Admin)
 
 Route::get('/user', 'UserController@index')->name('user');
+Route::get('/add-user', 'UserController@add')->name('add-user');
+Route::post('/store-user', 'UserController@store')->name('store-user');
