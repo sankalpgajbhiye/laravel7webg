@@ -11,7 +11,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h3 class="card-title">Users List</h3>
-                        <a href="{{ route('add-user') }}">
+                        <a href="{{ route('add-user') }}" class="float-right">
                             <button class="btn btn-success btn-sm ml-2">Add</button>
                         </a>
                     </div>
@@ -26,7 +26,7 @@
                                 <th>Mobile</th>
                                 <th>Gender</th>
                                 <th>Role</th>
-                                <th>Action</th>
+                                <th class="text-center">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -38,7 +38,14 @@
                                 <td>{{ $user->mobile }}</td>
                                 <td>{{ $user->gender }}</td>
                                 <td>{{ $user->role->role_name }}</td>
-                                <td>Buttons</td>
+                                <td class="text-center">
+                                    <button type="button" class="btn btn-outline-warning btn-sm">
+                                        <i class="fa fa-edit"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-outline-danger btn-sm">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>
@@ -50,7 +57,7 @@
                                 <th>Mobile</th>
                                 <th>Gender</th>
                                 <th>Role</th>
-                                <th>Action</th>
+                                <th class="text-center">Action</th>
                             </tr>
                         </tfoot>
                     </table>

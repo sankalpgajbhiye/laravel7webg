@@ -16,15 +16,10 @@ Route::get('/', function () {
 // });
 
 Route::get('/city', 'CityController@index')->name('cities');
-
 Route::get('/add-city', 'CityController@add')->name('add-city');
-
 Route::post('/store-city', 'CityController@store')->name('store-city');
-
 Route::get('/edit-city/{id}', 'CityController@edit')->name('edit-city');
-
-Route::put('/updat-city/{id}', 'CityController@update')->name('update-city');
-
+Route::put('/update-city/{id}', 'CityController@update')->name('update-city');
 Route::delete('/delete-city/{id}', 'CityController@delete')->name('delete-city');
 
 Auth::routes();
