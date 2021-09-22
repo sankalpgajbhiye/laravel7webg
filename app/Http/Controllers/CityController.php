@@ -31,7 +31,7 @@ class CityController extends Controller
     {
         // Validation Here
         $request->validate([
-            'city_name'     => 'required|unique:cities|max:3',
+            'city_name'     => 'required|unique:cities|max:30',
             'state_name'    => 'required|max:30',
             'country_name'  => 'required|max:30'
         ]);
@@ -40,11 +40,13 @@ class CityController extends Controller
         // Code to save
         $newCity = new City;
 
+
         $newCity->city_name = $request->city_name;
         $newCity->state_name = $request->state_name;
         $newCity->country_name = $request->country_name;
 
         $newCity->save();
+        dd($newCity);
 
         return redirect()->route('cities')->with('success','City created successfully!');
     }

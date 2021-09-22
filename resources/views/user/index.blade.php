@@ -39,9 +39,11 @@
                                 <td>{{ $user->gender }}</td>
                                 <td>{{ $user->role->role_name }}</td>
                                 <td class="text-center">
-                                    <button type="button" class="btn btn-outline-warning btn-sm">
-                                        <i class="fa fa-edit"></i>
-                                    </button>
+                                    <a href="{{ route('edit-user', $user->id) }}">
+                                        <button type="button" class="btn btn-outline-warning btn-sm">
+                                            <i class="fa fa-edit"></i>
+                                        </button>
+                                    </a>
                                     <button type="button" class="btn btn-outline-danger btn-sm">
                                         <i class="fa fa-trash"></i>
                                     </button>

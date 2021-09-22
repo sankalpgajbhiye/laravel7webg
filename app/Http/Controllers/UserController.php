@@ -9,8 +9,11 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
-    public function __construct()
+    public $role;
+
+    public function __construct(Role $roleclass)
     {
+        $this->role = $roleclass;
         $this->middleware('auth');
     }
 
@@ -22,8 +25,7 @@ class UserController extends Controller
 
     public function add()
     {
-        $selectArr = ['id','role_name'];
-        $roles = Role::get($selectArr);
+        $roles = $this->role->getDs();
         $genderArr = [
             'male'      => 'Male',
             'female'    => 'Female',
@@ -36,6 +38,7 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
+        // dd($request->all()); // for debug
         // Validatons
         $request->validate([
             'first_name'    => ['required', 'string', 'max:255'],
@@ -56,5 +59,19 @@ class UserController extends Controller
         }
 
         return redirect()->route('user')->with('danger','Server Error..! Try Again');
+    }
+
+    public function edit($id)
+    {
+        $user = User::findOrFail($id);
+
+        $roles = $this->role->getDs();
+
+        $genderArr = [
+            'male'      => 'Male',
+            'female'    => 'Female',
+            'other'     => 'Other'
+        ];
+        return view('user.edituser', compact('user', 'roles', 'genderArr'));
     }
 }

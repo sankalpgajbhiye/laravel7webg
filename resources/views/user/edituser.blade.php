@@ -1,6 +1,6 @@
 @extends('layouts.admintemplate')
 
-@section('title') Add User @endsection
+@section('title') Edit User @endsection
 
 @section('content')
 
@@ -10,7 +10,7 @@
             <div class="col-12 mt-3">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">User Add</h3>
+                        <h3 class="card-title">User Edit</h3>
                         <a href="{{ route('user') }}" class="float-right">
                             <button class="btn btn-default btn-sm ml-2">Back</button>
                         </a>
@@ -20,7 +20,7 @@
                         @csrf
                         @include('user.userform')
                         <div class="card-footer">
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary">Update</button>
                         </div>
                     </form>
                     <!-- /.card-body -->

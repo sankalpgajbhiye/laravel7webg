@@ -28,6 +28,20 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // routes for users crud (Only for Admin)
 
+// ----------------------------Route For Admin ---------------------------------
+
 Route::get('/user', 'UserController@index')->name('user');
 Route::get('/add-user', 'UserController@add')->name('add-user');
 Route::post('/store-user', 'UserController@store')->name('store-user');
+Route::get('/edit-user/{id}', 'UserController@edit')->name('edit-user');
+
+// ----------------------------Route For Admin ---------------------------------
+
+// ----------------------------Route For Hr ------------------------------------
+
+// ----------------------------Route For Hr ------------------------------------
+
+
+// ----------------------------Route For Student ---------------------------------
+
+// ----------------------------Route For Student ---------------------------------
